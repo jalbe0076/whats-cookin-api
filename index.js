@@ -62,7 +62,6 @@ app.post('/api/v1/usersRecipes', (req, res) => {
 
 app.delete('/api/v1/usersRecipes', (req, res) => {
   const { userID, recipeID } = req.body;
-
   for (let requiredParameter of ['userID', 'recipeID']) {
     if (req.body[requiredParameter] === undefined) {
       return res.status(422).json({
